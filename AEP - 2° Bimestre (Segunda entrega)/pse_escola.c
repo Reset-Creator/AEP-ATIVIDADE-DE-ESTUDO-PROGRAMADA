@@ -25,7 +25,7 @@ typedef struct {
     int  situacao;
 } Acao;
 
-/*Armazenamento em memÛria*/
+/*Armazenamento em mem√≥ria*/
 static Acao acoes[MAX_ACOES];
 static int totalAcoes = 0;
 
@@ -81,7 +81,7 @@ static void aparar(char *s) {
     s[n] = '\0';
 }
 
-/*texto obrigatÛrio*/
+/*texto obrigat√≥rio*/
 static void lerTextoObrigatorio(const char *rotulo, char *dest, int tam) {
     for (;;) {
         printf("%s", rotulo);
@@ -92,7 +92,7 @@ static void lerTextoObrigatorio(const char *rotulo, char *dest, int tam) {
     }
 }
 
-/*intervalo, repetindo atÈ ficar v·lido*/
+/*intervalo, repetindo at√© ficar v√°lido*/
 static int lerInteiro(const char *rotulo, int min, int max) {
     char buf[32];
     for (;;) {
@@ -246,7 +246,7 @@ static void cadastrarAcao(void) {
     }
     paraMaiusculas(codigo);
     if (buscarPorCodigo(codigo) != -1) {
-        printf("[ERRO] Codigo duplicado: ja° existe uma acao com o codigo %s.\n", codigo);
+        printf("[ERRO] Codigo duplicado: ja¬° existe uma acao com o codigo %s.\n", codigo);
         return;
     }
     strcpy(nova.codigo, codigo);
@@ -254,7 +254,7 @@ static void cadastrarAcao(void) {
     lerTextoObrigatorio("Escola: ", nova.escola, TAM_TEXTO);
     lerTextoObrigatorio("Tema (ex.: Alimentacao saudavel): ", nova.tema, TAM_TEXTO);
     lerData("Data prevista (DD/MM/AAAA): ", nova.data);
-    lerTextoObrigatorio("Publico-alvo (ex.: 6∫ ano): ", nova.publico, TAM_TEXTO);
+    lerTextoObrigatorio("Publico-alvo (ex.: 6¬∫ ano): ", nova.publico, TAM_TEXTO);
     lerTextoObrigatorio("Responsavel (funcao/equipe, sem dados de alunos): ", nova.responsavel, TAM_TEXTO);
     nova.prevista = lerInteiro("Quantidade prevista de participantes: ", 1, 100000);
     nova.efetiva = 0;
@@ -397,7 +397,7 @@ static void menuAcoesSaude(void) {
 /*Demais modulos do projeto*/
 
 static void mostrarCardapio(void) {
-    printf("\n===== CARD√ÅPIO DA ESCOLA =====\n");
+    printf("\n===== CARDAPIO DA ESCOLA =====\n");
     for (int i = 0; i < 5; i++) printf("%d - %s\n", i + 1, diasSemana[i]);
     int dia = lerInteiro("Escolha o dia (1 a 5): ", 1, 5);
     printf("\n%s: %s\n", diasSemana[dia - 1], cardapio[dia - 1]);
@@ -414,15 +414,15 @@ static void mostrarAvisos(void) {
     printf("\n===== AVISOS DA ESCOLA =====\n");
     printf("- Reuniao de pais e responsaveis na ultima sexta-feira do mes.\n");
     printf("- Use a garrafinha de agua nas aulas de educacao fisica.\n");
-    printf("- Biblioteca aberta das 7h √†s 17h.\n");
+    printf("- Biblioteca aberta das 7h √É¬†s 17h.\n");
 }
 
 static void mostrarConsultas(void) {
     printf("\n===== CONSULTAS E ATENDIMENTOS COLETIVOS =====\n");
     printf("Informativo (dados ficticios e coletivos):\n");
-    printf("- Avaliacao de saude bucal em grupo: 2™ quinzena de outubro.\n");
+    printf("- Avaliacao de saude bucal em grupo: 2¬™ quinzena de outubro.\n");
     printf("- Verificacao coletiva da situacao vacinal: mes de novembro.\n");
-    printf("Este sistema n√£o realiza diagn√≥stico, triagem ou atendimento de emerg√™ncia.\n");
+    printf("Este sistema nao realiza diagnostico, triagem ou atendimento de emergencia.\n");
     printf("Procure a unidade de saude de referencia para atendimento individual.\n");
 }
 
@@ -486,11 +486,11 @@ static void adicionarDemo(const char *cod, const char *esc, const char *tema,
 
 static void carregarDadosDemo(void) {
     adicionarDemo("A001", "Escola Municipal Alfa", "Alimentacao saudavel", "15/09/2026",
-                  "6∫ ano", "Equipe Saude", 40, 35, REALIZADA);
+                  "6¬∫ ano", "Equipe Saude", 40, 35, REALIZADA);
     adicionarDemo("A002", "Escola Municipal Beta", "Atividade fisica", "20/09/2026",
-                  "7∫ ano", "Prof. Educ. Fisica", 50, 0, PLANEJADA);
+                  "7¬∫ ano", "Prof. Educ. Fisica", 50, 0, PLANEJADA);
     adicionarDemo("A003", "Escola Municipal Alfa", "Saude mental", "25/09/2026",
-                  "9∫ ano", "Equipe Pedagogica", 30, 0, CANCELADA);
+                  "9¬∫ ano", "Equipe Pedagogica", 30, 0, CANCELADA);
 }
 
 /*Menu principal*/
